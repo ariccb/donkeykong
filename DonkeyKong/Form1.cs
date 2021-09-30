@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace DonkeyKong
 {
-    public partial class Form1 : Form
+    
+    public partial class ModeSelect : Form
     {
         NewLevel levelDialog; //this is declaring that it will exist
-        public Form1()
+        Editor editor;
+        public ModeSelect()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ModeSelect_Load(object sender, EventArgs e)
         {
 
         }
@@ -27,6 +29,7 @@ namespace DonkeyKong
         {
             levelDialog = new NewLevel(); // this is instantiating it, ie. creating it
             levelDialog.Show();
+            editor = new Editor("Level Editor");
         }
 
         private void button2_Click(object sender, EventArgs e)

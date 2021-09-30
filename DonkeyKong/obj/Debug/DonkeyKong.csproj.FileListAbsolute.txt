@@ -2,10 +2,11 @@ D:\Code\Lessons\donkeykong\DonkeyKong\bin\Debug\DonkeyKong.exe.config
 D:\Code\Lessons\donkeykong\DonkeyKong\bin\Debug\DonkeyKong.exe
 D:\Code\Lessons\donkeykong\DonkeyKong\bin\Debug\DonkeyKong.pdb
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.csproj.AssemblyReference.cache
-D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.Form1.resources
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.NewLevel.resources
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.Properties.Resources.resources
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.csproj.GenerateResource.cache
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.csproj.CoreCompileInputs.cache
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.exe
 D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.pdb
+D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.Canvas.resources
+D:\Code\Lessons\donkeykong\DonkeyKong\obj\Debug\DonkeyKong.ModeSelect.resources

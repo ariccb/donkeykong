@@ -11,7 +11,7 @@ namespace DonkeyKong
     {
         string name;
 
-        Editor(string name) 
+        public Editor(string name) 
         {
             this.name = name;
         }

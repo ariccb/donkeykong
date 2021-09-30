@@ -71,6 +71,7 @@ namespace DonkeyKong
             this.Name = "NewLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Level";
+            this.Load += new System.EventHandler(this.NewLevel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
