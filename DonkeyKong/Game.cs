@@ -36,12 +36,18 @@ namespace DonkeyKong
 
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.Button == MouseButtons.Left)
+            {
+                keys.Add("mouseleft");
+            }
         }
 
         private void Canvas_MouseUp(object sender, MouseEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.Button == MouseButtons.Left)
+            {
+                keys.Remove("mouseleft");
+            }
         }
 
         public void PauseGame()
