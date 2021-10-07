@@ -14,20 +14,37 @@ namespace DonkeyKong
         int y = 0;
         int width = 16;
         int height = 8;
+        bool hasClicked = false;
+        bool isClicked = false;
 
         public Girder()
         {
             sprite = Bitmap.FromFile("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\girder.bmp");
         }
-        public bool IsClicked(int mousex, int mousey)
+        public void Update()
         {
-            if (mousex <= (x + width) && mousex >= x && mousey <= y && mousey >= (y - height))
+            if (Game.keys.Contains("mouseleft"))
             {
-                return true;
+                if (!hasClicked)
+                {
+                    hasClicked = true;
+                    int clickx = Game.lastClickLocation.X;
+                    int clicky = Game.lastClickLocation.Y;
+                    if((clickx <= (x + width) && clickx >= x && clicky >= y && clicky <= (y + height)))
+                    {
+                        isClicked = true;
+                    }
+                }
             }
             else
             {
-                return false;
+                isClicked = false;
+                hasClicked = false;
+            }
+            if (isClicked)
+            {
+                x = Game.mouseLocation.X;
+                y = Game.mouseLocation.Y;
             }
         }
 
@@ -37,6 +54,6 @@ namespace DonkeyKong
         }
     }
 }
-      
+       
                  
           

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DonkeyKong
 {
-    public partial class Canvas : Form
+    partial class Canvas : Form
     {
         public Game game;
         public Canvas()
