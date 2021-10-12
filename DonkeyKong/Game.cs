@@ -14,16 +14,14 @@ namespace DonkeyKong
         public Canvas canvas;
         private Thread gameLoopThread;
         public bool canvasClosed = false;
+
+        public static HashSet<string> keys;
         public static Point lastClickLocation;
         public static Point mouseLocation;
         public Girder girder;
-        
-
-
-        public static HashSet<string> keys;
 
         private ManualResetEvent pause = new ManualResetEvent(true);
-       
+        public static List<Entity> EntityList = new List<Entity>();
 
 
         public Game(Canvas canvas)
@@ -34,11 +32,10 @@ namespace DonkeyKong
             canvas.MouseUp += Canvas_MouseUp;
             canvas.MouseDown += Canvas_MouseDown;
             canvas.MouseMove += Canvas_MouseMove;
-            canvas.Paint += Renderer;
+            canvas.Paint += Canvas_Renderer;
 
             keys = new HashSet<string>();
             girder = new Girder();
-
 
             gameLoopThread = new Thread(GameLoop);
             gameLoopThread.Start();
@@ -54,7 +51,7 @@ namespace DonkeyKong
         {
             if (e.Button == MouseButtons.Left)
             {
-                keys.Add("mouseleft");
+                keys.Add("mouse1");
                 lastClickLocation = e.Location;
             }
         }
@@ -63,7 +60,7 @@ namespace DonkeyKong
         {
             if (e.Button == MouseButtons.Left)
             {
-                keys.Remove("mouseleft");
+                keys.Remove("mouse1");
             }
         }
 
@@ -86,11 +83,11 @@ namespace DonkeyKong
             if (e.KeyCode == Keys.Left)
             {
                 keys.Remove("left");
-            }                
+            }
             else if (e.KeyCode == Keys.Right)
             {
                 keys.Remove("right");
-            }           
+            }
             else if (e.KeyCode == Keys.Space)
             {
                 keys.Remove("space");
@@ -103,26 +100,29 @@ namespace DonkeyKong
             if (e.KeyCode == Keys.Left)
             {
                 keys.Add("left");
-            }           
+            }
             else if (e.KeyCode == Keys.Right)
             {
                 keys.Add("right");
-            }           
+            }
             else if (e.KeyCode == Keys.Space)
             {
                 keys.Add("space");
             }
         }
 
-        private void Renderer(object sender, System.Windows.Forms.PaintEventArgs e)
+        private void Canvas_Renderer(object sender, System.Windows.Forms.PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-
             graphics.Clear(Color.Black);
-            girder.Update();
-            girder.Render(graphics);
-
-
+            for (int i = 0; i < EntityList.Count; i++)
+            {
+                EntityList[i].Update();
+            }
+            for (int i = 0; i < EntityList.Count; i++)
+            {
+                EntityList[i].Render(graphics);
+            }
         }
 
         public void GameLoop()
@@ -132,7 +132,6 @@ namespace DonkeyKong
                 canvas.BeginInvoke((MethodInvoker)delegate { canvas.Refresh(); });
                 pause.WaitOne();
                 Thread.Sleep(1);
-
             }
         }
 
