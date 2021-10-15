@@ -11,7 +11,11 @@ namespace DonkeyKong
     {
         bool hasClicked = false;
         bool isClicked = false;
-
+        int xoffset = 0;
+        int yoffset = 0;
+        public event EventHandler Clicked;
+        public event EventHandler Released;
+        
         public LevelObject(string ImgPath) : base(ImgPath)
         {
 
@@ -28,18 +32,24 @@ namespace DonkeyKong
                     if (clickx <= (x + Width) && clickx >= x && clicky >= y && clicky <= (y + Height))
                     {
                         isClicked = true;
+                        xoffset = x - clickx;
+                        yoffset = y - clicky;
                     }
                 }
             }
             else
             {
+                if (isClicked)
+                {
+                    Released?.Invoke(this, new EventArgs()); // ? means it only gets called if it has event handlers
+                }
                 isClicked = false;
                 hasClicked = false;
             }
             if (isClicked)
             {
-                x = Game.mouseLocation.X;
-                y = Game.mouseLocation.Y;
+                x = Game.mouseLocation.X + xoffset;
+                y = Game.mouseLocation.Y + yoffset;
             }
         }
         public void Render(Graphics graphics)

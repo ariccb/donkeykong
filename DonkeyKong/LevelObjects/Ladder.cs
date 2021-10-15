@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace DonkeyKong
 {
-    class Girder : LevelObject
+    class Ladder : LevelObject
     {
 
-        public Girder() : base("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\Level_Items\\girder.bmp")
+        public Ladder() : base("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\LevelItems\\ladder.bmp")
         {
 
         }

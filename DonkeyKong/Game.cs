@@ -11,14 +11,14 @@ namespace DonkeyKong
 {
     class Game
     {
-        public Canvas canvas;
         private Thread gameLoopThread;
         public bool canvasClosed = false;
 
         public static HashSet<string> keys;
         public static Point lastClickLocation;
         public static Point mouseLocation;
-        public Girder girder;
+        public Canvas canvas;
+        public Toolbar toolbar;
 
         private ManualResetEvent pause = new ManualResetEvent(true);
         public static List<Entity> EntityList = new List<Entity>();
@@ -35,7 +35,7 @@ namespace DonkeyKong
             canvas.Paint += Canvas_Renderer;
 
             keys = new HashSet<string>();
-            girder = new Girder();
+            toolbar = new Toolbar();
 
             gameLoopThread = new Thread(GameLoop);
             gameLoopThread.Start();

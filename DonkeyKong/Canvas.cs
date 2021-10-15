@@ -15,7 +15,8 @@ namespace DonkeyKong
             InitializeComponent();
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 800);
-            Image image = Bitmap.FromFile("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\girder.bmp");
+            this.Load += Canvas_Load;
+            Image image = Bitmap.FromFile("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\LevelItems\\girder.bmp");
             
         }
 
