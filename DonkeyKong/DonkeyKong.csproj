@@ -61,6 +61,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="LevelObjects\OilDrum.cs" />
     <Compile Include="LevelObjects\Ladder.cs" />
     <Compile Include="LevelObjects\Girder.cs" />
     <Compile Include="LevelObjects\LevelObject.cs" />

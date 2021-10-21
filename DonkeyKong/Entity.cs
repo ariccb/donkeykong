@@ -55,6 +55,41 @@ namespace DonkeyKong
             { return false; }
         }
 
+        public void PushOutCollision(Entity entity)
+        {
+            int[,] points1 = GetBoundingPoints();
+            int[,] points2 = entity.GetBoundingPoints();
+
+            int XOverlap = Math.Max(0, Math.Min(points1[3, 0], points2[3, 0]) - Math.Max(points1[0, 0], points2[0, 0]));
+            int YOverlap = Math.Max(0, Math.Min(points1[3, 1], points2[3, 1]) - Math.Max(points1[0, 1], points2[0, 1]));
+            if (XOverlap > 0 && YOverlap > 0)
+            {
+                if (XOverlap > YOverlap)
+                {
+                    if (YOverlap < (entity.Height / 2))
+                    {
+                        entity.y -= YOverlap;
+                    } 
+                    else
+                    {
+                        entity.y = y + Height;
+                    }
+
+                }
+                else
+                {
+                    if (entity.x < entity.Width)
+                    {
+                        entity.x -= XOverlap;
+                    }
+                    else
+                    {
+                        entity.x = (x + Width);
+                    }
+                }  
+            }
+        }
+
         public abstract void Update();
         public void Render(Graphics graphics)
         {

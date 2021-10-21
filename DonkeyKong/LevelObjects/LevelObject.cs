@@ -13,6 +13,7 @@ namespace DonkeyKong
         bool isClicked = false;
         int xoffset = 0;
         int yoffset = 0;
+
         public event EventHandler Clicked;
         public event EventHandler Released;
         
@@ -50,8 +51,18 @@ namespace DonkeyKong
             {
                 x = Game.mouseLocation.X + xoffset;
                 y = Game.mouseLocation.Y + yoffset;
+                foreach (Entity entity in Game.EntityList)
+                {
+
+                    if (entity != this)
+                    {
+                        entity.PushOutCollision(this);
+                    }    
+                }
+                //Clicked?.Invoke(this, new EventArgs());
             }
         }
+
         public void Render(Graphics graphics)
         {
             graphics.DrawImage(sprite, x, y);
