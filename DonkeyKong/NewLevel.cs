@@ -20,7 +20,9 @@ namespace DonkeyKong
 
         private void button1_Click(object sender, EventArgs e)
         {
-            canvas = new Canvas();
+            Level level = new Level();
+            level.name = textBox1.Text;
+            canvas = new Canvas(level);
             canvas.Show();
         }
 

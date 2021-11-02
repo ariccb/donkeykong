@@ -14,7 +14,6 @@ namespace DonkeyKong
     public partial class ModeSelect : Form
     {
         NewLevel levelDialog; //this is declaring that it will exist
-        Editor editor;
         public ModeSelect()
         {
             InitializeComponent();
@@ -29,7 +28,6 @@ namespace DonkeyKong
         {
             levelDialog = new NewLevel(); // this is instantiating it, ie. creating it
             levelDialog.Show();
-            editor = new Editor("Level Editor");
         }
 
         private void button2_Click(object sender, EventArgs e)

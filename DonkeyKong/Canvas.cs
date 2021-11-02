@@ -8,8 +8,9 @@ namespace DonkeyKong
 {
     partial class Canvas : Form
     {
-        public Game game;
-        public Canvas()
+        public Editor game;
+        public Level level;
+        public Canvas(Level level)
         {
             this.DoubleBuffered = true;
             InitializeComponent();
@@ -17,12 +18,12 @@ namespace DonkeyKong
             this.ClientSize = new System.Drawing.Size(800, 800);
             this.Load += Canvas_Load;
             Image image = Bitmap.FromFile("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\LevelItems\\girder.bmp");
-            
+            this.level = level;
         }
 
         private void Canvas_Load(object sender, EventArgs e)
         {
-            game = new Game(this);
+            game = new Editor(this, level);
         }
     }
 }

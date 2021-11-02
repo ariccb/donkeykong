@@ -7,29 +7,30 @@ using System.Drawing;
 
 namespace DonkeyKong
 {
+    [Serializable]
     class LevelObject : Entity
     {
         bool hasClicked = false;
         bool isClicked = false;
         int xoffset = 0;
         int yoffset = 0;
-
+        
         public event EventHandler Clicked;
         public event EventHandler Released;
         
         public LevelObject(string ImgPath) : base(ImgPath)
         {
-
+            Level.LevelObjectList.Add(this);
         }
         public override void Update()
         {
-            if (Game.keys.Contains("mouse1"))
+            if (Editor.keys.Contains("mouse1"))
             {
                 if (!hasClicked)
                 {
                     hasClicked = true;
-                    int clickx = Game.lastClickLocation.X;
-                    int clicky = Game.lastClickLocation.Y;
+                    int clickx = Editor.lastClickLocation.X;
+                    int clicky = Editor.lastClickLocation.Y;
                     if (clickx <= (x + Width) && clickx >= x && clicky >= y && clicky <= (y + Height))
                     {
                         isClicked = true;
@@ -49,9 +50,9 @@ namespace DonkeyKong
             }
             if (isClicked)
             {
-                x = Game.mouseLocation.X + xoffset;
-                y = Game.mouseLocation.Y + yoffset;
-                foreach (Entity entity in Game.EntityList)
+                x = Editor.mouseLocation.X + xoffset;
+                y = Editor.mouseLocation.Y + yoffset;
+                foreach (Entity entity in Editor.EntityList)
                 {
 
                     if (entity != this)

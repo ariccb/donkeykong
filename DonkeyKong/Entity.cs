@@ -28,7 +28,7 @@ namespace DonkeyKong
         public Entity(string ImgPath)
         {
             sprite = Image.FromFile(ImgPath);
-            Game.EntityList.Add(this);
+            Editor.EntityList.Add(this);
         }
         public int[,] GetBoundingPoints()
         {
@@ -97,7 +97,7 @@ namespace DonkeyKong
         }
         public virtual void Delete()
         {
-            Game.EntityList.Remove(this);
+            Editor.EntityList.Remove(this);
             EventHandler handler = Deleted;
             handler?.Invoke(this, new EventArgs());
         }
