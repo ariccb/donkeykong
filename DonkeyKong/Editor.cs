@@ -19,7 +19,7 @@ namespace DonkeyKong
         public static Point mouseLocation;
         public Canvas canvas;
         public Toolbar toolbar;
-        public Level level;
+        public static Level level;
 
         private ManualResetEvent pause = new ManualResetEvent(true);
         public static List<Entity> EntityList = new List<Entity>();
@@ -27,6 +27,7 @@ namespace DonkeyKong
 
         public Editor(Canvas canvas, Level level)
         {
+            Editor.level = level;
             this.canvas = canvas;
             canvas.KeyDown += Canvas_KeyPress;
             canvas.KeyUp += Canvas_KeyRelease;
@@ -37,11 +38,9 @@ namespace DonkeyKong
 
             keys = new HashSet<string>();
             toolbar = new Toolbar();
-            this.level = level;
 
             gameLoopThread = new Thread(GameLoop);
             gameLoopThread.Start();
-
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -145,6 +144,5 @@ namespace DonkeyKong
                 Thread.Sleep(1);
             }
         }
-
     }
 }

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>123Test</name>
+  <LevelObjectList>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>97</x>
+      <y>16</y>
+    </LevelObject>
+    <LevelObject xsi:type="Ladder">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>51</y>
+    </LevelObject>
+    <LevelObject xsi:type="Girder">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>79</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>81</x>
+      <y>16</y>
+    </LevelObject>
+    <LevelObject xsi:type="Ladder">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>51</y>
+    </LevelObject>
+    <LevelObject xsi:type="Girder">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>79</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>132</x>
+      <y>19</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>148</x>
+      <y>19</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>211</x>
+      <y>24</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>195</x>
+      <y>24</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>15</y>
+    </LevelObject>
+    <LevelObject xsi:type="OilDrum">
+      <sprite xsi:type="Bitmap">
+        <Palette />
+      </sprite>
+      <scale>1</scale>
+      <x>10</x>
+      <y>15</y>
+    </LevelObject>
+  </LevelObjectList>
+  <saved>true</saved>
+</Level>

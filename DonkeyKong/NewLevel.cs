@@ -30,5 +30,12 @@ namespace DonkeyKong
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Level level = Level.Deserialize(textBox1.Text);
+            canvas = new Canvas(level);
+            canvas.Show();
+        }
     }
 }

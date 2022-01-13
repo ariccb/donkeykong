@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DonkeyKong
 {
-    class Ladder : LevelObject
+    public class Ladder : LevelObject
     {
 
         public Ladder() : base("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\LevelItems\\ladder.bmp")

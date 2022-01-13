@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Xml.Serialization;
+
 
 namespace DonkeyKong
 {
+    [XmlInclude(typeof(OilDrum))]
+    [XmlInclude(typeof(Ladder))]
+    [XmlInclude(typeof(Girder))]
+    [XmlInclude(typeof(Bitmap))]
     [Serializable]
-    class LevelObject : Entity
+    public class LevelObject : Entity
     {
         bool hasClicked = false;
         bool isClicked = false;
@@ -17,10 +23,15 @@ namespace DonkeyKong
         
         public event EventHandler Clicked;
         public event EventHandler Released;
-        
+
+        public LevelObject() : base("")
+        {
+            
+        }
+
         public LevelObject(string ImgPath) : base(ImgPath)
         {
-            Level.LevelObjectList.Add(this);
+            Editor.level.LevelObjectList.Add(this);
         }
         public override void Update()
         {

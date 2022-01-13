@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Xml.Serialization;
+
 
 namespace DonkeyKong
 {
-    abstract class Entity
+    [XmlInclude(typeof(Bitmap))]
+    public abstract class Entity
     {
         public event EventHandler Deleted;
         public int Height
@@ -20,7 +23,7 @@ namespace DonkeyKong
             get
             { return sprite.Width; }
         }
-
+        
         public Image sprite;
         public float scale = 1;
         public int x;

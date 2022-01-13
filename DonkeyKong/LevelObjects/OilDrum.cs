@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DonkeyKong
 {
-    class OilDrum : LevelObject
+    public class OilDrum : LevelObject
     {
 
         public OilDrum() : base("D:\\Code\\Lessons\\donkeykong\\DonkeyKong\\Sprites\\LevelItems\\oil-drum.bmp")
